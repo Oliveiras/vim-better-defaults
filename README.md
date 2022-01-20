@@ -21,7 +21,7 @@ But, in the worst case, you may need to edit a file through an `ssh` connection 
 This plugin merges the features of 3 sources:
 
 * It has everything from [defaults.vim](https://github.com/vim/vim/blob/master/runtime/defaults.vim)
-* It has everything from [sensible.vim](https://github.com/tpope/vim-sensible)
+* It has everything from [sensible.vim](https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim)
 * It has almost everything from [nvim-defaults](https://neovim.io/doc/user/vim_diff.html) (some things are not applicable to vim)
 
 For some options, this sources are in conflict. In this cases, I decide which one to keep, favoring usefulness, instead of backward compatibility.
@@ -31,8 +31,8 @@ It also has some extra settings that people usually add to their init file, base
 * `set number`: Show line numbers. Also, if you didn't change the colorscheme, it will set the color of the line numbers to gray (because the default colorscheme uses the same color for line numbers and for syntax highlighting).
 * `set ignorecase` and `set wildignorecase`: Ignore case for searches and file name completions.
 * `set statusline`: If you didn't set a statusline, it will set one for you. In comparison with the built-in statusline, it adds the buffer number, file type, encoding, line ending format and current indentation (tabs or spaces and width).
-If you have unicode support, you may like to change separators with:
-    `let g:default_statusline_left_separator = "  "`
+If you have unicode support, you may like to change separators with: <br>
+    `let g:default_statusline_left_separator = "  "` <br>
     `let g:default_statusline_right_separator = "  "`
 
 ### Disabling or overriding
