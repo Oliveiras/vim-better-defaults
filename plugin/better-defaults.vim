@@ -15,11 +15,20 @@ else
     let g:loaded_better_defaults = 'yes'
 endif
 
+" Decide the location of data-dir
+if ! exists('$XDG_DATA_HOME')
+  if has('win32')
+    let $XDG_DATA_HOME=$LOCALAPPDATA
+  else
+    let $XDG_DATA_HOME=$HOME . '/.local/share'
+  endif
+endif
+
 " Decide the location of the backup directory.
 if exists('g:default_backup_dir')
     " already set
 elseif has('nvim')
-    let g:default_backup_dir = &backupdir
+    let g:default_backup_dir = $XDG_DATA_HOME . '/nvim/backup//'
 elseif has('win32')
     let g:default_backup_dir = $HOME . '/vimfiles/backup//'
 else
