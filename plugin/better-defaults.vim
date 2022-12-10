@@ -102,9 +102,10 @@ endif
 if ! exists('g:default_noset_number')
     set number
 
-    " Line numbers call too much attention on default color scheme.
+    " On default color scheme, line numbers call too much attention and visual mode bg-color hides selected text.
     if ! exists('g:colors_name')
-        highlight LineNr ctermfg=gray guifg=gray
+        highlight LineNr ctermfg=darkgray guifg=darkgray
+        highlight Visual ctermbg=darkgray guibg=darkgray
     endif
 endif
 
